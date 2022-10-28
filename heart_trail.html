@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Heart-Trail-Animation</title>
+    <style>
+        body{
+            margin: 0;
+            height: 100vh;
+            background-color: black;
+            overflow: hidden;
+        }
+        span{
+            background:url("https://cdn4.iconfinder.com/data/icons/general-office/91/General_Office_54-512.png") ;
+            width: 100px;
+            height: 100px;
+            position: absolute;
+            pointer-events: none;
+            background-size: cover;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%,-50%);
+            animation: animate 6s linear;
+        }
+        @keyframes animate{
+            0%{
+                transform: translate(-50%,-50%);
+                opacity: 1;
+                filter: hue-rotate(0);
+            }
+            100%{
+                transform: translate(-50%,-500%);
+                opacity: 0;
+                filter: hue-rotate(720deg);
+            }
+            
+        }
+    </style>
+</head>
+<body>
+    <script>
+        const bodyE1 = document.querySelector("body");
+
+        bodyE1.addEventListener("mousemove",(event)=>{
+            const xPos = event.offsetX;
+            const yPos = event.offsetY;
+
+            const spanE1 = document.createElement("span");
+            spanE1.style.left = xPos + "px";
+            spanE1.style.top = yPos + "px";
+            
+            const size = Math.random()*100;
+            spanE1.style.width = size + "px";
+            spanE1.style.height = size + "px";
+            
+            bodyE1.appendChild(spanE1);
+
+            setTimeout(() => {
+                spanE1.remove();
+            }, 2000);
+        })
+
+    </script>
+</body>
+</html>

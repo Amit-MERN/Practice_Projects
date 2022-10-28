@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blured Background Pop-up</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <style>
+        body{
+            margin: 0;
+        }
+        .container{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            height: 100vh;
+            justify-content: center;
+            background: url('https://images.unsplash.com/photo-1560762484-813fc97650a0?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=774&q=80');
+            background-size: cover;
+            transition: filter 0.7s;
+        }
+        h1{
+            color: white;
+            font-size: 60px;
+            font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+            letter-spacing: 4px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+        }
+        .btn{
+            padding: 10px 20px;
+            width: 200px;
+            cursor: pointer;
+            background-color: orangered;
+            border: none;
+            border-radius: 5px;
+            font-size: 20px;
+        }
+        .btn:hover{
+            filter: brightness(0.8);
+        }
+        .active.container{
+            filter: blur(5px) brightness(0.7);
+        }
+        .popup-container{
+            position: fixed;
+            left: 50%;
+            top: 30%;
+            transform: translate(-50%);
+            width: 400px;
+            height: 200px;
+            background-color: bisque;
+            display: flex;
+            flex-direction: column;
+            padding: 20px;
+            background: url('https://images.unsplash.com/uploads/141103282695035fa1380/95cdfeef?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1130&q=80');
+            background-size: contain;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+            opacity: 1;
+            transition: all 0.7s;
+        }
+        h4{
+            font-size: 30px;
+            margin: 10px 0px;
+            color: blueviolet;
+            font-family: sans-serif;
+        }
+        label{
+            color: blueviolet;
+            font-family: sans-serif;
+        }
+        .popup-btn{
+            background-color: orangered;
+            padding: 10px;
+            font-size: 20px;
+            cursor: pointer;
+            border: 2px solid;
+        }
+        .input{
+            border: 2px solid;
+            padding: 10px;
+            margin: 10px 0px;
+            font-size: 20px;
+            text-align: center;
+        }
+        .input::placeholder{
+            color: lightgray;
+        }
+        .close-icon{
+            position: absolute;
+            right: 20px;
+            cursor: pointer;
+        }
+        .close-icon:hover{
+            color: orangered;
+        }
+        .active.popup-container{
+            visibility: hidden;
+            opacity: 0;
+            top: 10%;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Welcome to our Website</h1>
+        <button class="btn">Click to join</button>
+    </div>
+    <div class="popup-container active">
+        <h4>20% OFF Offer</h4>
+        <label for="email">Your Email</label>
+        <input
+         type="email"
+          name="email" 
+          class="input" 
+          placeholder="Enter your email"
+          >
+
+        <button class="popup-btn">Join</button>
+        <div class="close-icon">
+            <i class="fa-regular fa-xmark fa-x"></i>
+        </div>
+    </div>
+    <script>
+        const containerE1 = document.querySelector(".container")
+        const btnE1 =  document.querySelector(".btn")
+        const popupcontainerE1 = document.querySelector(".popup-container")
+        const closeiconE1 = document.querySelector(".close-icon")
+
+        btnE1.addEventListener("click",()=>{
+            containerE1.classList.add("active");
+            popupcontainerE1.classList.remove("active");
+        })
+        closeiconE1.addEventListener("click",()=>{
+            containerE1.classList.remove("active");
+            popupcontainerE1.classList.add("active");
+        })
+    </script>
+</body>
+</html>

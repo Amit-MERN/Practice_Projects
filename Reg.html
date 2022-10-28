@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Log-In_Form</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+    <style>
+    body{
+        margin: 0;
+        background: linear-gradient(tomato,blue);
+    }
+    .main-container{
+     height: 100vh;
+     display: flex;
+     flex-direction: column;
+     justify-content: center;
+    }
+
+    .container{
+        display: block;
+        margin:  0 auto;
+        border-radius: 5px;
+        width: 300px;
+        height: 300px;
+    }
+    .btn{
+        background: none;
+        color: black;
+        border: 1px solid black;
+        padding: 6px;
+        border-radius: 10px;
+        font-size: 1rem;
+       }
+       .btn:hover{
+        background: none;
+        cursor: pointer;
+        background: linear-gradient(tomato,blue);
+        color: aqua;
+        border: 1px solid black;
+        padding: 6px;
+        border-radius: 10px;
+        font-size: 1rem;
+       }
+       .log{
+        text-align: center;
+        text-decoration:underline;
+        color:whitesmoke;
+        margin: 0;
+       }
+
+       input{
+        padding: 10px;
+        outline: none;
+        background: none;
+        color: white;
+        font-weight: bold;
+        opacity: 0.5;
+        display: inline-block;
+        font-size: 1rem;
+        box-sizing: border-box;
+        border-style: hidden;
+        width: 92%;
+       
+       }
+       .frm{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        height: 100%;
+        align-items: center;
+       }
+       input::placeholder{
+        color: aliceblue;
+        font-weight: bold;
+       }
+       .IE{
+        border-bottom: 1px solid black;
+       }       
+
+       .frm > i{
+        margin: 35px;
+        color:cornflowerblue;
+       }
+
+    </style>
+<body>
+
+    <div class="main-container">
+        <div class="form-container">
+            <div class="container">
+                <form class="frm" action="">
+                    <h3 class="log">Registor</h3>
+                    <i class="fa-solid fa-user fa-4x"></i>
+                    <div class="IE">
+                        <input type="text" placeholder="First Name">
+                    </div>
+                    <br>
+                    <div class="IE">
+                        <input type="text" placeholder="Last Name">
+                    </div>
+                   <br>
+                    <div class="IE">
+                        <input type="email" placeholder="Email Id">
+                    </div>
+                    <br>
+                    <div class="IE"> 
+                        <input type="password" placeholder="Passward"> 
+                    </div>
+            <br>
+            <button type="submit" class="btn">Register</button>
+        </form></div>
+        </div>
+    
+</div>
+</body>
+</html>

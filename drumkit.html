@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Drum_Kit</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<style>
+    body{
+        margin: 0;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        height: 100vh;
+        justify-content: center;
+        background-color: pink;
+    }
+    h1{
+        font-size: 50px;
+        font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+        color: white;
+        letter-spacing: 4px;
+        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+        white-space: nowrap;
+    }
+    .container{
+        text-align: center;
+    }
+    .btn{
+        color: white;
+        padding: 30px 50px;
+        border: none;
+        border-radius: 10px;
+        margin: 10px;
+        font-size: 30px;
+        min-width: 200px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+        cursor: pointer;
+        text-transform: capitalize;
+        background-image: url("image/snare1.jpg");
+        background-size:cover
+    }
+    .btn:hover{
+        color: pink;
+    }
+    .btn:active{
+        background-size: 105%;
+    }
+</style>
+<body>
+    <h1>Drum-Kit
+        <i class="fa fa-thin fa-drum"></i>
+    </h1>
+    <div class="container">
+
+    </div>
+    <script>
+        const kits = ["crash","snare","kick","tom"]
+        const containerE1 = document.querySelector(".container")
+
+        kits.forEach((kits)=>{
+            const btnE1 = document.createElement("button");
+            console.log(kits);
+
+            btnE1.classList.add("btn")
+            btnE1.innerText = kits
+
+            containerE1.appendChild(btnE1)
+
+            const audioE1 = document.createElement("audio");
+
+            audioE1.src = "sounds/" + kits + ".mp3"
+
+            containerE1.appendChild(audioE1)
+
+            btnE1.addEventListener("click",()=>{
+                audioE1.play();
+            })
+
+        })
+    </script>
+</body>
+</html>
